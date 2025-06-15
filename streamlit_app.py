@@ -137,43 +137,46 @@ if molecule is not None:
                 result = classification()
                 print(result)
                 output = ''
-                with st.form('predict_form'):
-                    submitted = st.form_submit_button('AR')
-                    submitted = st.form_submit_button('ER')
-                    submitted = st.form_submit_button('GR')
-                    submitted = st.form_submit_button('TR')
-                    submitted = st.form_submit_button('PPARg')
-                    submitted = st.form_submit_button('Aromatase')
+            with st.form('predict_form'):
+                submitted = st.form_submit_button('AR')
+                submitted = st.form_submit_button('ER')
+                submitted = st.form_submit_button('GR')
+                submitted = st.form_submit_button('TR')
+                submitted = st.form_submit_button('PPARg')
+                submitted = st.form_submit_button('Aromatase')
                     
-                    if result['predict_AR'] == 1:
-                        output = f'AR_Yes'
-                    else:
-                        output = f'AR_No'
+                if result['predict_AR'] == 1:
+                    output = f'AR_Yes'
+                else:
+                    output = f'AR_No'
                         
-                    if result['predict_ER'] == 1:
-                        output = f'ER_Yes'
-                    else:
-                        output = f'ER_No'
+                if result['predict_ER'] == 1:
+                    output = f'ER_Yes'
+                else:
+                    output = f'ER_No'
                         
-                    if result['predict_GR'] == 1:
-                        output = f'GR_Yes'
-                    else:
-                        output = f'GR_No'
-                    if result['predict_TR'] == 1:
-                        output = f'TR_Yes'
-                    else:
-                        output = f'TR_No'
-                    if result['predict_PPARg'] == 1:
-                        output = f'PPARg_Yes'
-                    else:
-                        output = f'PPARg_No'
-                    if result['predict_Aromatase'] == 1:
-                        output = f'Aromatase_Yes'
-                    else:
-                        output = f'Aromatase_No'
-                st.success('Done!')
-                st.markdown(f'<p style="font-size: 20px;"><b>{output}</b></p>', unsafe_allow_html=True)
-                #st.balloons()
+                if result['predict_GR'] == 1:
+                     output = f'GR_Yes'
+                else:
+                    output = f'GR_No'
+
+                if result['predict_TR'] == 1:
+                    output = f'TR_Yes'
+                else:
+                    output = f'TR_No'
+
+                if result['predict_PPARg'] == 1:
+                    output = f'PPARg_Yes'
+                else:
+                    output = f'PPARg_No'
+
+                if result['predict_Aromatase'] == 1:
+                    output = f'Aromatase_Yes'
+                else:
+                    output = f'Aromatase_No'
+            st.success('Done!')
+            st.markdown(f'<p style="font-size: 20px;"><b>{output}</b></p>', unsafe_allow_html=True)
+            #st.balloons()
 
 
 #Add a header and expander in side bar

@@ -121,7 +121,7 @@ def classification():
 # Upload SMILES string
 
 molecule = st.text_input("Molecule", 'CC1CC2C3CC(F)C4=CC(=O)C=CC4(C)C3(F)C(O)CC2(C)C1(O)C(=O)CO')
-molecule = [molecule]
+molecule_list = [molecule]
 
 if molecule is not None:
     # print (uploaded_file)
@@ -133,7 +133,7 @@ if molecule is not None:
         submitted = st.form_submit_button('Predict')
         if submitted:
             with st.spinner('Wait for it...'):
-                MACCS = from_smiles_to_csv(molecule)
+                MACCS = from_smiles_to_csv(molecule_list)
                 result = classification()
                 print(result)
                 output = ''

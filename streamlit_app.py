@@ -118,7 +118,7 @@ def classification():
 
 # Upload SMILES string
 
-molecule = st.text_input("Molecule", DEFAULT_MOL)
+molecule = st.text_input("Molecule", 'CC1CC2C3CC(F)C4=CC(=O)C=CC4(C)C3(F)C(O)CC2(C)C1(O)C(=O)CO')
 
 if molecule is not None:
     # print (uploaded_file)

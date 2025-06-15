@@ -145,35 +145,30 @@ if molecule is not None:
             # submitted = st.form_submit_button('PPARg')
             # submitted = st.form_submit_button('Aromatase')
                 
-            if result['predict_AR'] == 1:
-                output_AR = f'AR_Yes'
-            else:
-                output_AR = f'AR_No'
+            output_AR = 'No'
+            if result['predict_AR'].item() == 1:
+                output_AR = f'Yes'
                     
-            if result['predict_ER'] == 1:
-                output_ER = f'ER_Yes'
-            else:
-                output_ER = f'ER_No'
+            output_ER = 'No'
+            if result['predict_ER'].item() == 1:
+                output_ER = f'Yes'
                     
-            if result['predict_GR'] == 1:
-                output_GR = f'GR_Yes'
-            else:
-                output_GR = f'GR_No'
+            output_GR = 'No'
+            if result['predict_GR'].item() == 1:
+                output_GR = f'Yes'
 
-            if result['predict_TR'] == 1:
-                output_TR = f'TR_Yes'
-            else:
-                output_TR = f'TR_No'
+            output_TR = 'No'
+            if result['predict_TR'].item() == 1:
+                output_TR = f'Yes'
 
-            if result['predict_PPARg'] == 1:
-                output_PPARg = f'PPARg_Yes'
-            else:
-                output_PPARg = f'PPARg_No'
-
-            if result['predict_Aromatase'] == 1:
-                output_Aromatase = f'Aromatase_Yes'
-            else:
-                output_Aromatase = f'Aromatase_No'
+            output_PPARg = 'No'
+            if result['predict_PPARg'].item() == 1:
+                output_PPARg = f'Yes'
+            
+            output_Aromatase = 'No'
+            if result['predict_Aromatase'].item() == 1:
+                output_Aromatase = f'Yes'
+            
             st.success('Done!')
             st.markdown(f'''
                         <p style="font-size: 20px;">AR: <b>{output_AR}</b></p><br/>

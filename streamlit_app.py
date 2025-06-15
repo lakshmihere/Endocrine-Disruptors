@@ -80,7 +80,7 @@ st.write("""
 def from_smiles_to_csv(molecule):
     #print(molecule)
     #df = pd.DataFrame(molecule, columns=['smiles'])
-    df = pd.DataFrame(list(molecule), columns = ['smiles'])
+    df = pd.DataFrame(molecule, columns = ['smiles'])
     PandasTools.AddMoleculeColumnToFrame(df,'smiles','mol')
     df_maccs = []
     for mol in df['mol']:
@@ -121,6 +121,7 @@ def classification():
 # Upload SMILES string
 
 molecule = st.text_input("Molecule", 'CC1CC2C3CC(F)C4=CC(=O)C=CC4(C)C3(F)C(O)CC2(C)C1(O)C(=O)CO')
+molecule = [molecule]
 
 if molecule is not None:
     # print (uploaded_file)

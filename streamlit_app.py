@@ -134,7 +134,7 @@ if molecule is not None:
         if submitted:
             with st.spinner('Wait for it...'):
                 MACCS = from_smiles_to_csv(molecule)
-                result = classification(MACCS)
+                result = classification()
                 print(result)
                 output = ''
                 with st.form('predict_form'):

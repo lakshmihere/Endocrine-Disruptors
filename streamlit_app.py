@@ -78,7 +78,7 @@ st.write("""
 """)
 
 def from_smiles_to_csv(molecule):
-    df = pd.DataFrame(predict_list, columns=['smiles'])
+    df = pd.DataFrame(molecule, columns=['smiles'])
     PandasTools.AddMoleculeColumnToFrame(df,'smiles','mol')
     df_maccs = []
     for mol in df['mol']:
